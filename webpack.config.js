@@ -28,12 +28,11 @@ var config = {
     module : {
         rules : [
           {
-            test : /\.js$/,
+            test: /\.(jsx|js)?$/,
             exclude: /node_modules/,
-            use: {
-                loader : "babel-loader"
-            }
-            
+            use: [{
+            loader: "babel-loader"}
+            ]
           },
           {
             test: /\.scss$/,
@@ -46,22 +45,6 @@ var config = {
                 loader: 'sass-loader' // compiles sass to CSS
               }]
           },
-          {
-            test: /\.css$/,
-            use: [
-              {
-                loader: MiniCssExtractPlugin.loader,
-                options: {
-                  // you can specify a publicPath here
-                  // by default it use publicPath in webpackOptions.output
-                  publicPath: '../'
-                }
-              },
-              "css-loader"
-            ]
-          }
-          
-
         ],
       },
       plugins: [
