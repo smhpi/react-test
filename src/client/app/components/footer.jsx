@@ -22,7 +22,7 @@ function Footer(/*props*/) {
         </Nav>
 
         <div className="text-center small copyright">
-          © RLM 2016
+          © Hosen 2018
         </div>
       </Grid>
     </footer>
