@@ -12,7 +12,7 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      rowData: products.slice(0, 12)
+      rowData: products
     };
   }
 
