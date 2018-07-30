@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Pagination } from 'react-bootstrap';
 
 function ListPagination(props){
@@ -16,9 +17,10 @@ function ListPagination(props){
 }
 
 ListPagination.propTypes = {
-    activePage: React.PropTypes.number.isRequired,
-    items: React.PropTypes.number.isRequired,
-    onSelect: React.PropTypes.func.isRequired
+    
+    activePage: PropTypes.arrayOf(PropTypes.number).isRequired,
+    items: PropTypes.arrayOf(PropTypes.number).isRequired,
+    onSelect: PropTypes.arrayOf(PropTypes.func).isRequired
   };
   
   ListPagination.defaultProps = {

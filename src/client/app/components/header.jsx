@@ -9,7 +9,7 @@ class Header extends React.Component {
         <Navbar.Header>
           <Navbar.Brand>
             <a href="/">
-              Our Store
+              <img src="../images/logo.png" style={{ maxWidth:120 }}/>
             </a>
           </Navbar.Brand>
           <Navbar.Toggle />
