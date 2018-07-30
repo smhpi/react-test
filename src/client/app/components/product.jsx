@@ -4,9 +4,7 @@ import PropTypes from 'prop-types';
 import { Col, Panel } from 'react-bootstrap';
 
 function Product(props) {
-  let {
-    product
-  } = props;
+  let { product } = props;
 
   return (
     <Col
@@ -17,28 +15,28 @@ function Product(props) {
         <div className="product-img-wrapper">
           <a href="#">
             <img
-              alt={product.name}
+              alt={product.title}
               className="img-responsive product-img"
-              src={product.picture} />
+              src={product.image.src} />
           </a>
         </div>
 
         <h4
           className="ellipsis"
-          title={product.name}>
+          title={product.title}>
           <a href="#">
-            {product.name}
+            {product.title}
           </a>
         </h4>
 
         <h5
           className="ellipsis product-brand-name"
-          title={product.brand_name}>
-          {`by ${product.brand_name}`}
+          title={product.vendor}>
+          {`by ${product.vendor}`}
         </h5>
 
         <div className="h4 product-price">
-          {`${product.price}$`}
+          {`${product.variants[0].price}$`}
         </div>
       </Panel>
     </Col>
