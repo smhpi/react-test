@@ -12,7 +12,9 @@ var _expressGraphql = require('express-graphql');
 
 var _expressGraphql2 = _interopRequireDefault(_expressGraphql);
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : { default: obj };
+}
 
 var app = (0, _express2.default)();
 var db = require('./db');
@@ -44,3 +46,7 @@ db.connect('mongodb://localhost:27017/mydb', function (err, database) {
     res.send('Hello Express');
   });
 });
+//# sourceMappingURL=server.js.map
+//# sourceMappingURL=server.js.map
+//# sourceMappingURL=server.js.map
+//# sourceMappingURL=server.js.map
