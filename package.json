@@ -6,6 +6,9 @@
   "scripts": {
     "start": "webpack-dev-server --config webpack.config.js",
     "build": "webpack -p",
+    "babel-node": "npx babel ./src/server/index.js --out-file ./src/server/server.js",
+    "server": "nodemon ./src/server/server.js",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "babel": {
@@ -53,8 +56,13 @@
     "webpack-dev-server": "^3.1.4"
   },
   "dependencies": {
+    "concurrently": "^3.6.1",
     "events": "^3.0.0",
+    "express": "^4.16.3",
+    "express-graphql": "^0.4.5",
+    "graphql": "^0.4.14",
     "jquery": "^3.3.1",
+    "nodemon": "^1.18.3",
     "popper": "^1.0.1",
     "react-bootstrap": "^0.32.1",
     "react-dom-factories": "^1.0.2"
