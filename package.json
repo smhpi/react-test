@@ -8,7 +8,7 @@
     "build": "webpack -p",
     "babel-node": "npx babel ./src/server/index.js --out-file ./src/server/server.js",
     "server": "nodemon ./src/server/dist/index.js",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "dev": "concurrently \"npm run server\" \"npm run start\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "babel": {
