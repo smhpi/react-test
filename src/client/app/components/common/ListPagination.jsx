@@ -1,30 +1,38 @@
 import React from 'react';
-import { Pagination } from 'react-bootstrap';
+import PropTypes from 'prop-types';
+import Pagination from 'react-bootstrap/lib/Pagination';
+//import { createUltimatePagination, ITEM_TYPES } from 'react-ultimate-pagination';
 
-function ListPagination(props){
-    return(
-        <Pagination
-        activePage={props.activePage}
-        first
-        items={props.items}
-        last
-        maxButtons={5}
-        next
-        onSelect={props.onSelect}
-        prev />
+let itemss = [];
+
+function ListPagination(props) {
+    for (let number = 1; number <= 3; number++) {
+        itemss.push(
+          <Pagination.Item active={ number === props.active} >{number}</Pagination.Item>
+        );
+      }
+    return (
+        
+        <Pagination  bsSize="medium"  onClick={props.onClick}>
+            <Pagination.First />
+            <Pagination.Prev />
+                {itemss}
+            <Pagination.Next />
+            <Pagination.Last />
+        </Pagination>
     );
-}
+  }
 
 ListPagination.propTypes = {
-    activePage: React.PropTypes.number.isRequired,
-    items: React.PropTypes.number.isRequired,
-    onSelect: React.PropTypes.func.isRequired
+    active: PropTypes.number.isRequired,
+    items: PropTypes.number.isRequired,
+    onClick: PropTypes.func.isRequired
   };
   
   ListPagination.defaultProps = {
-    activePage: 1,
+    active: 1,
     items: 1,
-    onSelect: () => {}
+    onClick: () => {}
   };
-  
+
   export default ListPagination;

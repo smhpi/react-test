@@ -1,29 +1,50 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Product from './product.jsx';
-
+import ListPagination from './common/ListPagination.jsx';
 import { Col, Clearfix } from 'react-bootstrap';
 
-const PAGE_SIZE = 24;
+const PAGE_SIZE = 20;
 
 class ProductList extends React.Component {
 
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      page: 1
+    };
+
+    this.handleSelectPage = this.handleSelectPage.bind(this);
+  }
+
+  handleSelectPage(page) {
+    this.setState(page);
+  }
 
   render() {
-
+    const { page } = this.state;
+    const products = this.props.products.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE);
 
     return (
-      <div>
-        
-
+        <div>
+        <Col
+            className='text-right'
+            xs={12}>
+            <ListPagination
+                currentPage={page}
+                totalPages={Math.ceil(this.props.products.length / PAGE_SIZE)}
+                onChange={this.handleSelectPage} />
+        </Col>
         <Clearfix />
         {
-          this.props.products.map(product => (
+          products.map(product => (
             <Product
               key={product.id}
               product={product} />
           ))
         }
+        
       </div>
     );
   }
