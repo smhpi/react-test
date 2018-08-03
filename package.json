@@ -51,8 +51,6 @@
     "react-dom": "^16.4.1",
     "react-hot-loader": "^4.3.3",
     "react-redux": "^5.0.7",
-    "react-ultimate-pagination": "^1.2.0",
-    "react-ultimate-pagination-bootstrap-3": "^1.1.0",
     "sass-loader": "^7.0.3",
     "style-loader": "^0.21.0",
     "url-loader": "^1.0.1",
@@ -70,6 +68,7 @@
     "nodemon": "^1.18.3",
     "popper": "^1.0.1",
     "react-bootstrap": "^0.32.1",
-    "react-dom-factories": "^1.0.2"
+    "react-dom-factories": "^1.0.2",
+    "react-js-pagination": "^3.0.2"
   }
 }

@@ -6,14 +6,15 @@ import Pagination from 'react-bootstrap/lib/Pagination';
 let itemss = [];
 
 function ListPagination(props) {
-    for (let number = 1; number <= 3; number++) {
+    let items = props.items;
+    for (let number = 1; number <= items ; number++) {
         itemss.push(
-          <Pagination.Item active={ number === props.active} >{number}</Pagination.Item>
+          <Pagination.Item active={ number === props.active} onSelect={props.onSelect}>{number}</Pagination.Item>
         );
       }
     return (
         
-        <Pagination  bsSize="medium"  onClick={props.onClick}>
+        <Pagination  bsSize="medium"  >
             <Pagination.First />
             <Pagination.Prev />
                 {itemss}
@@ -26,13 +27,13 @@ function ListPagination(props) {
 ListPagination.propTypes = {
     active: PropTypes.number.isRequired,
     items: PropTypes.number.isRequired,
-    onClick: PropTypes.func.isRequired
+    onSelect: PropTypes.func.isRequired
   };
   
   ListPagination.defaultProps = {
     active: 1,
     items: 1,
-    onClick: () => {}
+    onSelect: () => {}
   };
 
   export default ListPagination;

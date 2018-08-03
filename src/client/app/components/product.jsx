@@ -38,6 +38,9 @@ function Product(props) {
         <div className="h4 product-price">
           {`${product.variants[0].price}$`}
         </div>
+        <div className="h4 product-price">
+          {`Shopify Qt:${product.variants[0].inventory_quantity}`}
+        </div>
       </Panel>
     </Col>
   );
