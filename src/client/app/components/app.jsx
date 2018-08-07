@@ -5,6 +5,7 @@ import Footer from './Footer.jsx';
 import ProductList from './productList.jsx';
 import API from '../lib/API';
 import LinkStore from '../stores/LinkStore';
+//import ProductPage from './ProductPage'
 
 import { Grid } from 'react-bootstrap';
 

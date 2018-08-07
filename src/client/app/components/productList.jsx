@@ -31,7 +31,7 @@ class ProductList extends React.Component {
     return (
         <div>
         <Col
-            className='text-center'
+            className='text-right'
             xs={12}>
             <Pagination
                 activePage={this.state.page}
