@@ -60,7 +60,10 @@ var config = {
             filename: "/styles/styles.css",
             chunkFilename: false
           })
-      ]
+      ],
+      devServer: {
+        historyApiFallback: true
+      }
 };
 
 module.exports = config;

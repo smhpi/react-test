@@ -16,6 +16,12 @@ var schema = new _graphql.GraphQLSchema({
                     resolve: function resolve() {
                         return 42;
                     }
+                },
+                message: {
+                    type: _graphql.GraphQLString,
+                    resolve: function resolve() {
+                        return "Hello GraphQL";
+                    }
                 }
             };
         }

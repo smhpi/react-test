@@ -2,7 +2,7 @@ import React from 'react';
 
 import Header from './Header.jsx';
 import Footer from './Footer.jsx';
-import ProductList from './productList.jsx';
+//import ProductList from './productList.jsx';
 import API from '../lib/API';
 import LinkStore from '../stores/LinkStore';
 //import ProductPage from './ProductPage'
@@ -22,7 +22,7 @@ class App extends React.Component {
     }; */
 
     this.state = _getAppState();
-        this.onChange = this.onChange.bind(this);
+    this.onChange = this.onChange.bind(this);
   }
 
   componentDidMount(){
@@ -44,8 +44,15 @@ onChange() {
       <div>
         <Header />
         <Grid id="content">
-        <ProductList
-          products={this.state.links} />
+          {
+            React.cloneElement(
+              this.props.children,
+              {
+                products: this.state.links
+              }
+            )
+          }
+        
         </Grid>
         <Footer />
       </div>
