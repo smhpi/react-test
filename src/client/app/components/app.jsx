@@ -2,10 +2,10 @@ import React from 'react';
 
 import Header from './Header.jsx';
 import Footer from './Footer.jsx';
-//import ProductList from './productList.jsx';
+import ProductList from './productList.jsx';
 import API from '../lib/API';
 import LinkStore from '../stores/LinkStore';
-//import ProductPage from './ProductPage'
+import ProductPageWrapper from './ProductPageWrapper.jsx';
 
 import { Grid } from 'react-bootstrap';
 
@@ -44,15 +44,11 @@ onChange() {
       <div>
         <Header />
         <Grid id="content">
-          {
-            React.cloneElement(
-              this.props.children,
-              {
-                products: this.state.links
-              }
-            )
-          }
-        
+        <ProductList
+        products={this.state.links} />
+        <ProductPageWrapper
+        products={this.state.links} />
+
         </Grid>
         <Footer />
       </div>

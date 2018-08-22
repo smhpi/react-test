@@ -3,20 +3,9 @@ import PropTypes from 'prop-types';
 import { findDOMNode } from 'react-dom';
 import { PageHeader, Image, Col, Panel, Media, InputGroup, FormControl, Button } from 'react-bootstrap';
 
-class ProductPage extends React.Component {
-  constructor(props) {
-    super(props);
-    let { product } = props;
-    console.log(props)
-       // this.state = {
-    //   quantity
-    // }
-  }
- 
-
-  render() {
-    
-    const PanelHeader = (
+function ProductPage(props) {
+  let { product } = props;
+  const PanelHeader = (
         <div className="text-uppercase">
           Price:
   
@@ -25,7 +14,7 @@ class ProductPage extends React.Component {
           </span>
         </div>
       );
-      const PanelFooter = (
+  const PanelFooter = (
           <div>
             <InputGroup>
                   <FormControl
@@ -48,7 +37,7 @@ class ProductPage extends React.Component {
             </Button>
 
           </div>  
-      );
+    );
 
     return(
         <div>
@@ -91,9 +80,5 @@ class ProductPage extends React.Component {
       </div>
     );
   }
-
-
-}
-
 
 export default ProductPage;

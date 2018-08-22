@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import { Col, Panel } from 'react-bootstrap';
@@ -13,20 +14,20 @@ function Product(props) {
       sm={6}>
       <Panel className="product">
         <div className="product-img-wrapper">
-          <a href="#">
+        <Link to={`shop/${product.id}`}>
             <img
               alt={product.title}
               className="img-responsive product-img"
               src={product.image.src} />
-          </a>
+          </Link>
         </div>
 
         <h4
           className="ellipsis"
           title={product.title}>
-          <a href="#">
+          <Link to={`shop/${product.id}`}>
             {product.title}
-          </a>
+          </Link>
         </h4>
 
         <h5
