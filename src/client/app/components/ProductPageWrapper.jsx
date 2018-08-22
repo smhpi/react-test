@@ -8,9 +8,7 @@ class ProductPageWrapper extends React.Component {
 
   render() {
       
-    const product = this.props.products.find((p) => {
-      return p.id === this.props.products.params.id;
-    });
+    const product = this.props.productsDetails[3];
 
     return product ? (
       <ProductPage

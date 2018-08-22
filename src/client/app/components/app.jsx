@@ -47,7 +47,7 @@ onChange() {
         <ProductList
         products={this.state.links} />
         <ProductPageWrapper
-        products={this.state.links} />
+        productsDetails={this.state.links} />
 
         </Grid>
         <Footer />

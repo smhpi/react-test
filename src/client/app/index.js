@@ -17,7 +17,7 @@ render((
                 component={Home} />
 
             <Route path="/shop" component={App}></Route>
-                <Route path="/shop/:id" component={ProductPageWrapper} />
+            <Route path="/shop/:id" component={ProductPageWrapper} />
             
             
             </div> 
