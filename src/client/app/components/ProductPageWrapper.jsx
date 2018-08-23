@@ -1,36 +1,12 @@
 import React from 'react';
 
 import ProductPage from './ProductPage.jsx';
-import LinkStore from '../stores/LinkStore';
-import API from '../lib/API';
-
-let _getAppState = () => {
-    return { links: LinkStore.getAll()}
-  }
   
 class ProductPageWrapper extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = _getAppState();
-    this.onChange = this.onChange.bind(this);
-  }
-
-  componentDidMount(){
-    API.fetchLink();
-    LinkStore.on("change" , this.onChange)
-  }
-
-  componentWillMount(){
-      LinkStore.removeAllListeners("change", this.onChange);
-  }
-
-  onChange() {
-      console.log("4- in the view");
-      this.setState(_getAppState());
-  }  
+  
   render() {
     
-    const productsDetails = this.state.links;
+    const productsDetails = this.props.productsDetails;
     const { match: { params } } = this.props;
     const id = params.id;
     

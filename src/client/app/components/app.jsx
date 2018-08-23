@@ -1,12 +1,14 @@
 import React from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { Grid } from 'react-bootstrap';
 
-import Footer from './Footer.jsx';
-import ProductList from './productList.jsx';
 import API from '../lib/API';
 import LinkStore from '../stores/LinkStore';
+import ProductList from './productList.jsx';
 import ProductPageWrapper from './ProductPageWrapper.jsx';
+import Home from './Home.jsx';
+import Main from './Main.jsx';
 
-import { Grid } from 'react-bootstrap';
 
 let _getAppState = () => {
   return { links: LinkStore.getAll()}
@@ -15,11 +17,6 @@ let _getAppState = () => {
 class App extends React.Component {
   constructor(props) {
     super(props);
-
-   /* this.state = {
-      rowData: products
-    }; */
-
     this.state = _getAppState();
     this.onChange = this.onChange.bind(this);
   }
@@ -41,13 +38,19 @@ onChange() {
   render() {
     return (
       <div>
-        <Grid id="content">
-        <ProductList
-        products={this.state.links} />
-
-
-        </Grid>
-        <Footer />
+        <Router>
+            <div>
+                <Main>
+                    <Route exact path="/" component={Home} />
+                    <Route path="/shop" render={ () => <ProductList 
+                                          products = {this.state.links}
+                                          /> } ></Route>
+                    <Route path="/shop/:id" render={ () => <ProductPageWrapper
+                                                productDetail={this.state.links} />
+                                              } />
+                </Main>
+            </div>
+        </Router>
       </div>
     );
   }

@@ -1,11 +1,18 @@
-import React from 'react';
+import React , {Component} from 'react';
 import PropTypes from 'prop-types';
-import { findDOMNode } from 'react-dom';
 import { PageHeader, Image, Col, Panel, Media, InputGroup, FormControl, Button } from 'react-bootstrap';
 
-function ProductPage(props) {
-  let { product } = props;
-  const PanelHeader = (
+class ProductPage extends Component{
+
+  constructor(props){
+    super(props);
+
+  }
+  
+    render(){
+      const { product } = this.props;
+
+      const PanelHeader = (
         <div className="text-uppercase">
           Price:
   
@@ -14,32 +21,32 @@ function ProductPage(props) {
           </span>
         </div>
       );
-  const PanelFooter = (
-          <div>
-            <InputGroup>
-                  <FormControl
-                      id="qtyInput"
-                      min="1"
-                      max="99"
-                      type="number"
-                      defaultValue={1}
-                      ref={(ref) => { this.qtyInput = ref; }} 
-                      />
-                    <InputGroup.Addon>
-                      Units
-                    </InputGroup.Addon>
-            </InputGroup> 
-            <Button
-                block
-                bsStyle="primary"
-                bsSize="large">
-                Add to Cart
-            </Button>
+      const PanelFooter = (
+              <div>
+                <InputGroup>
+                      <FormControl
+                          id="qtyInput"
+                          min="1"
+                          max="99"
+                          type="number"
+                          defaultValue={1}
+                          ref={(ref) => { this.qtyInput = ref; }} 
+                          />
+                        <InputGroup.Addon>
+                          Units
+                        </InputGroup.Addon>
+                </InputGroup> 
+                <Button
+                    block
+                    bsStyle="primary"
+                    bsSize="large">
+                    Add to Cart
+                </Button>
 
-          </div>  
-    );
-
-    return(
+              </div>  
+        );
+        
+      return(
         <div>
         <Col sm={12}>
           <PageHeader>
@@ -78,7 +85,8 @@ function ProductPage(props) {
           </Panel>
         </Col>
       </div>
-    );
-  }
+      );
+    }   
+}
 
 export default ProductPage;
