@@ -14,18 +14,18 @@ function Product(props) {
       sm={6}>
       <Panel className="product">
         <div className="product-img-wrapper">
-        <Link to={`shop/${product.id}`}>
+        <Link to={"/shop/"+product.id}>
             <img
               alt={product.title}
               className="img-responsive product-img"
               src={product.image.src} />
-          </Link>
+        </Link>
         </div>
 
         <h4
           className="ellipsis"
           title={product.title}>
-          <Link to={`shop/${product.id}`}>
+          <Link to={"/shop/"+product.id}>
             {product.title}
           </Link>
         </h4>

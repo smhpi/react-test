@@ -54,3 +54,12 @@ footer .navbar .navbar-default{
       margin-bottom: 0;
     }
   }
+
+  a.active {
+    color: #000000 !important;
+    text-decoration: underline !important;
+
+}
+.current {
+  border-bottom: 4px solid red;
+}
