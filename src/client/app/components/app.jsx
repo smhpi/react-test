@@ -1,6 +1,5 @@
 import React , {Component} from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import { Grid } from 'react-bootstrap';
 
 import API from '../lib/API';
 import LinkStore from '../stores/LinkStore';
