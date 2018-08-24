@@ -7,6 +7,7 @@ import ProductList from './productList.jsx';
 import ProductPageWrapper from './ProductPageWrapper.jsx';
 import Home from './Home.jsx';
 import Main from './Main.jsx';
+import Report from './Report.jsx';
 
 
 let _getAppState = () => {
@@ -41,10 +42,11 @@ onChange() {
             <div>
                 <Main>
                     <Route exact path="/" component={Home} />
-                    <Route path="/shop" render={ () => <ProductList 
+                    <Route path="/shop/" render={ () => <ProductList 
                                           products = {this.state.links}
                                           /> } ></Route>
                     <Route path="/shop/:id" component={ProductPageWrapper}></Route>
+                    <Route path="/report/" component={Report}></Route>
                 </Main>
             </div>
         </Router>
