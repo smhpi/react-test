@@ -1,4 +1,4 @@
-import React from 'react';
+import React , {Component} from 'react';
 import PropTypes from 'prop-types';
 import Product from './product.jsx';
 import Pagination from 'react-js-pagination';
@@ -7,7 +7,7 @@ import { Col, Clearfix } from 'react-bootstrap';
 
 const PAGE_SIZE = 20;
 
-class ProductList extends React.Component {
+class ProductList extends Component {
 
   constructor(props) {
     super(props);

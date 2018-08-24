@@ -1,4 +1,4 @@
-import React from 'react';
+import React , {Component} from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { Grid } from 'react-bootstrap';
 
@@ -14,7 +14,7 @@ let _getAppState = () => {
   return { links: LinkStore.getAll()}
 }
 
-class App extends React.Component {
+class App extends Component {
   constructor(props) {
     super(props);
     this.state = _getAppState();

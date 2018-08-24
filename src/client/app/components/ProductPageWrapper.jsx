@@ -1,8 +1,8 @@
-import React from 'react';
+import React , {Component} from 'react';
 
 import ProductPage from './ProductPage.jsx';
   
-class ProductPageWrapper extends React.Component {
+class ProductPageWrapper extends Component {
   
   render() {
     
