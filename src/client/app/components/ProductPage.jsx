@@ -54,12 +54,6 @@ class ProductPage extends Component{
           </PageHeader>
           <Media className="product-page-brand">
             <Media.Left align="middle">
-              <Image
-                alt={product.vendor}
-                circle
-                className="product-page-brand-logo"
-                height="49"
-                src={product.brand_logo} />
             </Media.Left>
             <Media.Body>
               <Media.Heading className="product-page-brand-name">{product.vendor}</Media.Heading>

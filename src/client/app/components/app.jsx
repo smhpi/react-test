@@ -44,9 +44,7 @@ onChange() {
                     <Route path="/shop" render={ () => <ProductList 
                                           products = {this.state.links}
                                           /> } ></Route>
-                    <Route path="/shop/:id" render={ () => <ProductPageWrapper
-                                                productDetail={this.state.links} />
-                                              } />
+                    <Route path="/shop/:id" component={ProductPageWrapper}></Route>
                 </Main>
             </div>
         </Router>
