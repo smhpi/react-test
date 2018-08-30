@@ -1,25 +1,33 @@
-import {
-    GraphQLSchema,
-    GraphQLObjectType,
-    GraphQLInt,
-    GraphQLString
-} from 'graphql';
+'use strict';
 
-let schema = new GraphQLSchema({
-    query: new GraphQLObjectType({
-        name: 'Query' ,
-        fields:() => ({
-            counter: {
-                type: GraphQLInt,
-                resolve: () => 42
-            },
-            message: {
-                type: GraphQLString,
-                resolve: () => "Hello GraphQL"
-            }
-        })
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _graphql = require('graphql');
+
+var schema = new _graphql.GraphQLSchema({
+    query: new _graphql.GraphQLObjectType({
+        name: 'Query',
+        fields: function fields() {
+            return {
+                counter: {
+                    type: _graphql.GraphQLInt,
+                    resolve: function resolve() {
+                        return 42;
+                    }
+                },
+                message: {
+                    type: _graphql.GraphQLString,
+                    resolve: function resolve() {
+                        return "Hello GraphQL";
+                    }
+                }
+            };
+        }
     })
 
     //mutation
-})
-export default schema;
+});
+exports.default = schema;
+//# sourceMappingURL=schema.js.map

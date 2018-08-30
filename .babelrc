@@ -1,5 +1,6 @@
 {
     "presets" : [
+      
 
       ["env", {
         "targets": {
@@ -10,5 +11,8 @@
           ]
         }
       }]
-      ,"react"]
+      ,"react"],
+      "plugins": [
+        "babel-plugin-transform-class-properties"
+     ]
   }

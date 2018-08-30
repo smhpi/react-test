@@ -3,11 +3,11 @@ const sourcemaps = require('gulp-sourcemaps');
 const babel = require('gulp-babel');
 
 gulp.task('default', () =>
-    gulp.src('src/server/**/*.js')
+    gulp.src('src/server/bin/**/*.js')
         .pipe(sourcemaps.init())
 		.pipe(babel({
 			presets: ['babel-preset-env']
         }))
         .pipe(sourcemaps.write('.'))
-		.pipe(gulp.dest('src/server/dist'))
+		.pipe(gulp.dest('src/server'))
 );

@@ -78,7 +78,7 @@ export default class LoginPage extends Component{
                                   </li>
                                 </ul> ) : null
                             }
-                        </div >
+                        </div>
                         
 
                     </div>

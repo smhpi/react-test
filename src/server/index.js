@@ -1,15 +1,31 @@
-import express from 'express';
-import schema from './data/schema';
-import GraphQLHTTP from 'express-graphql';
+'use strict';
 
-let app = express();
+var _express = require('express');
 
-app.use(express.static('dist'));
+var _express2 = _interopRequireDefault(_express);
 
-app.use('/graphql', GraphQLHTTP({
-    schema
+var _schema = require('./data/schema');
+
+var _schema2 = _interopRequireDefault(_schema);
+
+var _expressGraphql = require('express-graphql');
+
+var _expressGraphql2 = _interopRequireDefault(_expressGraphql);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var app = (0, _express2.default)();
+
+app.use(_express2.default.static('dist'));
+
+app.use('/graphql', (0, _expressGraphql2.default)({
+    schema: _schema2.default
 }));
 
-app.listen(3000, () => console.log('Listening on port 3000!'))
-    app.get('/api', (req, res) => { 
-        res.send('Hello Express')});
+app.listen(4000, function () {
+    return console.log('Listening on port 4000!');
+});
+app.get('/api', function (req, res) {
+    res.send('Hello Express');
+});
+//# sourceMappingURL=index.js.map
