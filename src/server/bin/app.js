@@ -1,6 +1,6 @@
 var express = require('express');
 var path = require('path');
-var favicon = require('serve-favicon');
+//var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
@@ -30,6 +30,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.listen(4000, () => console.log('Listening on port 4000!'))
+    app.get('/api', (req, res) => { 
+        res.send('Hello Express api')});
 app.use('/api/v1/', index);
+
+
 
 module.exports = app;

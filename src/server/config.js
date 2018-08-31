@@ -9,12 +9,6 @@ module.exports = {
 
     },
 
-    'twitterAuth': {
-        'consumerKey': 'your-consumer-key-here',
-        'consumerSecret': 'your-client-secret-here',
-        'callbackURL': 'http://localhost:4000/auth/twitter/callback'
-    },
-
     'googleAuth': {
         'clientID': '913263751154-oh91796ocd9obrcg8s4e27dr7ujrd2od.apps.googleusercontent.com',
         'clientSecret': 'GFg_ZRFz4lEylIdJSN1qxOcs',

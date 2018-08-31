@@ -36,13 +36,13 @@ module.exports = function () {
         }
     });
 
-    UserSchema.set('toJSON', { getters: true, virtuals: true });
+    UserSchema.set('toJSON', {getters: true, virtuals: true});
 
-    UserSchema.statics.upsertFbUser = function (accessToken, refreshToken, profile, cb) {
+    UserSchema.statics.upsertFbUser = function(accessToken, refreshToken, profile, cb) {
         var that = this;
         return this.findOne({
             'facebookProvider.id': profile.id
-        }, function (err, user) {
+        }, function(err, user) {
             // no user was found, lets create a new one
             if (!user) {
                 var newUser = new that({
@@ -54,7 +54,7 @@ module.exports = function () {
                     }
                 });
 
-                newUser.save(function (error, savedUser) {
+                newUser.save(function(error, savedUser) {
                     if (error) {
                         console.log(error);
                     }
@@ -66,11 +66,11 @@ module.exports = function () {
         });
     };
 
-    UserSchema.statics.upsertGoogleUser = function (accessToken, refreshToken, profile, cb) {
+    UserSchema.statics.upsertGoogleUser = function(accessToken, refreshToken, profile, cb) {
         var that = this;
         return this.findOne({
             'googleProvider.id': profile.id
-        }, function (err, user) {
+        }, function(err, user) {
             // no user was found, lets create a new one
             if (!user) {
                 var newUser = new that({
@@ -82,7 +82,7 @@ module.exports = function () {
                     }
                 });
 
-                newUser.save(function (error, savedUser) {
+                newUser.save(function(error, savedUser) {
                     if (error) {
                         console.log(error);
                     }
@@ -98,4 +98,3 @@ module.exports = function () {
 
     return db;
 };
-//# sourceMappingURL=mongoos.js.map
