@@ -60,8 +60,6 @@
     "webpack-dev-server": "^3.1.4"
   },
   "dependencies": {
-    "@okta/okta-react": "^1.0.3",
-    "@okta/okta-signin-widget": "^2.3.0",
     "axios": "^0.18.0",
     "concurrently": "^3.6.1",
     "cookie-parser": "^1.4.3",
@@ -86,10 +84,14 @@
     "react-js-pagination": "^3.0.2",
     "react-router": "^4.3.1",
     "react-router-bootstrap": "^0.24.4",
+<<<<<<< HEAD
     "react-router-dom": "^4.3.1",
     "react-twitter-auth": "0.0.12",
     "regenerator-runtime": "^0.12.1",
     "request": "^2.88.0",
     "semantic-ui-react": "^0.82.3"
+=======
+    "react-router-dom": "^4.3.1"
+>>>>>>> parent of c131464... sigingPage
   }
 }

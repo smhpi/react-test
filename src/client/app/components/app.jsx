@@ -3,11 +3,12 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import API from '../lib/API';
 import LinkStore from '../stores/LinkStore';
-import LoginPage from './auth/LoginPage.jsx';
-import Home from './Home.jsx';
 import ProductList from './productList.jsx';
 import ProductPageWrapper from './ProductPageWrapper.jsx';
+import Home from './Home.jsx';
+import Main from './Main.jsx';
 import Report from './Report.jsx';
+
 
 let _getAppState = () => {
   return { links: LinkStore.getAll()}
@@ -36,16 +37,20 @@ onChange() {
 
   render() {
     return (
+      <div>
         <Router>
-                <LoginPage>
-                    <Route exact={true} path="/" component={Home} />
-                    <Route  path="/shop/" render={ () => <ProductList 
+            <div>
+                <Main>
+                    <Route exact path="/" component={Home} />
+                    <Route path="/shop/" render={ () => <ProductList 
                                           products = {this.state.links}
-                                          /> } />
-                    <Route  path="/shop/:id" component={ProductPageWrapper} />
-                    <Route  path="/report/" component={Report} />
-                </LoginPage>
+                                          /> } ></Route>
+                    <Route path="/shop/:id" component={ProductPageWrapper}></Route>
+                    <Route path="/report/" component={Report}></Route>
+                </Main>
+            </div>
         </Router>
+      </div>
     );
   }
 }

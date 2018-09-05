@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
     "presets" : [
       
 
@@ -15,4 +16,7 @@
       "plugins": [
         "babel-plugin-transform-class-properties"
      ]
+=======
+    "presets" : ["es2015", "env","react"]
+>>>>>>> parent of c131464... sigingPage
   }
