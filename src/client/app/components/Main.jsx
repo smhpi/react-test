@@ -17,7 +17,7 @@ class Main extends Component{
                             <ul className="nav navbar-nav">
                                 <li><NavLink exact activeClassName="current" to="/"> Home </NavLink></li>
                                 <li><NavLink exact activeClassName="current" to="/shop"> Products </NavLink></li>
-                                <li><NavLink exact activeClassName="current" to="/report"> Reports </NavLink></li>
+                                <li><NavLink exact activeClassName="current" to="/about"> About </NavLink></li>
                             </ul>
                         </div>
                     </div>
